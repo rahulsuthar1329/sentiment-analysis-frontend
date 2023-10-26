@@ -76,7 +76,7 @@ const Register = () => {
         setForm(formData);
 
         const response = await axios.post(
-          "http://localhost:5001/auth/send_auth_otp",
+          "https://sentiment-analysis-backend-three.vercel.app/auth/send_auth_otp",
           { email: email.trim().toLowerCase(), username: username.trim() }
         );
         if (response.data) {

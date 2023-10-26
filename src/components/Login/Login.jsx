@@ -64,10 +64,13 @@ const Login = () => {
 
     try {
       if (uniqueId.trim() && password.trim()) {
-        const response = await axios.post("http://localhost:5001/auth/login", {
-          uniqueId,
-          password,
-        });
+        const response = await axios.post(
+          "https://sentiment-analysis-backend-three.vercel.app/auth/login",
+          {
+            uniqueId,
+            password,
+          }
+        );
         if (response.status === 200) {
           setLoading(false);
           toast.success("Login Successfully!", toastOptions);
