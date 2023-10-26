@@ -1,0 +1,39 @@
+* {
+  transition: all 0.1s linear;
+}
+.logo {
+  cursor: pointer;
+}
+.logo:hover {
+  filter: brightness(120%);
+  transform: scale(1.05, 1.05);
+}
+.login {
+  background-color: #349b7e;
+  border: none;
+  font-size: 13px;
+  outline: 1px solid #349b7e;
+  border-radius: 4px;
+  padding: 5px 20px;
+  color: white;
+  box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.5);
+}
+.login:hover {
+  background-color: #2dbe95;
+  outline: 1px solid #2dbe95;
+}
+.register {
+  font-size: 13px;
+  outline: 1px solid #349b7e;
+  border: none;
+  color: #349b7e;
+  padding: 5px 12px;
+  border-radius: 4px;
+  background-color: white;
+}
+.register:hover {
+  color: white;
+  background-color: #349b7e;
+  outline: 1px solid #349b7e;
+  box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.5);
+}

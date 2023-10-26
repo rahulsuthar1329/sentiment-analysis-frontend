@@ -1,0 +1,8 @@
+.container {
+  bottom: 50px;
+  box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.3);
+  border-bottom: 5px solid;
+  border-image-slice: 1;
+  /* border-image-source: linear-gradient(to left, #00c853, #b2ff59); */
+  border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+}

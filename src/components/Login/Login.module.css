@@ -1,0 +1,145 @@
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 10px 0;
+  min-height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.mycont {
+  display: flex;
+  width: 80%;
+}
+
+.leftSide {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rightSide {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: white;
+  gap: 20px;
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-direction: column;
+}
+
+.logo {
+  margin-bottom: 20px;
+}
+
+.heading {
+  text-align: center;
+  font-size: 25px;
+  color: #018661;
+  font-weight: 600;
+}
+
+.rightSide p {
+  font-size: 13px;
+  text-align: center;
+  margin: 0;
+}
+
+.rightSide span {
+  color: #349b7e;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+  -ms-user-selec: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
+.rightSide span:hover,
+.goback:hover {
+  color: #2dbe95;
+  text-decoration: underline;
+}
+
+.code {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.input {
+  border: 1px solid #027e5b;
+  width: 75%;
+  outline: none;
+  font-size: 13px;
+  padding: 12px 15px;
+  border-radius: 5px;
+}
+
+.submit {
+  background-color: #349b7e;
+  border: none;
+  font-size: 15px;
+  outline: 1px solid #349b7e;
+  border-radius: 4px;
+  width: 75%;
+  padding: 8px 30px;
+  color: white;
+  box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.5);
+}
+
+.submit:hover {
+  background-color: #2dbe95;
+  outline: 1px solid #2dbe95;
+}
+
+@media (max-width: 992px) {
+  .mycont {
+    width: 100%;
+    box-shadow: none;
+  }
+
+  .submit,
+  .input,
+  .forgot {
+    width: 50% !important;
+  }
+
+  .rightSide {
+    padding: 10px;
+  }
+
+  .leftSide {
+    display: none !important;
+    flex: 0 !important;
+  }
+
+  .vector {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .submit,
+  .input,
+  .forgot {
+    width: 100% !important;
+  }
+  .mycont {
+    padding: 10px 20px !important;
+  }
+  .rightSide {
+    height: 100%;
+  }
+}

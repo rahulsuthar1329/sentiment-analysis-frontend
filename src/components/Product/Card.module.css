@@ -1,0 +1,30 @@
+.like {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+}
+.like > *:hover {
+  cursor: pointer;
+  color: #349b7e;
+}
+.addToCart {
+  background-color: white;
+  border: none;
+  outline: 0.05rem solid #349b7e;
+  color: #349b7e;
+  font-size: 12px;
+  border-radius: 30px;
+  font-weight: 600;
+  padding: 5px 15px;
+}
+.addToCart:hover {
+  background-color: #349b7e;
+  color: white;
+}
