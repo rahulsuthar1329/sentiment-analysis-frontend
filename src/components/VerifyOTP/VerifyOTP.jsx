@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import toastOptions from "../../utils/toastOptions";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
+import { path } from "../../path";
 
 let currentIndex = 0;
 const VerifyOTP = ({ setVerifyOTPModel, formData }) => {
@@ -67,20 +68,17 @@ const VerifyOTP = ({ setVerifyOTPModel, formData }) => {
       const gender = formData.get("gender");
       const mobile = formData.get("mobile");
 
-      const response = await axios.post(
-        "https://sentiment-analysis-backend-three.vercel.app/auth/register",
-        {
-          firstName,
-          lastName,
-          username,
-          email,
-          password,
-          dateOfBirth,
-          gender,
-          mobile,
-          combinedOTP,
-        }
-      );
+      const response = await axios.post(`${path}/auth/register`, {
+        firstName,
+        lastName,
+        username,
+        email,
+        password,
+        dateOfBirth,
+        gender,
+        mobile,
+        combinedOTP,
+      });
       if (response.data) {
         toast.success(
           "Congratulations! You are now a part of GenieCart Family.",

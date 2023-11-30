@@ -5,8 +5,8 @@ import google from "./images/Google_Logo.png";
 import checkbox_unselected from "./images/Checkbox_Unselected.png";
 import checkbox_selected from "./images/Checkbox_Selected.png";
 import selectedRadio from "./images/selectedRadioOutlined.png";
-import { BsFillEyeFill, BsFillEyeSlashFill } from "react-icons/bs";
 import unSelectedRadio from "./images/unSelectedRadioOutlined.png";
+import { BsFillEyeFill, BsFillEyeSlashFill } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import toastOptions from "../../utils/toastOptions";
@@ -18,6 +18,7 @@ import {
   isUsernameValid,
 } from "../../utils/validation";
 import VerifyOTP from "../VerifyOTP/VerifyOTP";
+import { path } from "../../path";
 
 const Register = () => {
   const [loading, setLoading] = useState(false);
@@ -75,10 +76,10 @@ const Register = () => {
 
         setForm(formData);
 
-        const response = await axios.post(
-          "https://sentiment-analysis-backend-three.vercel.app/auth/send_auth_otp",
-          { email: email.trim().toLowerCase(), username: username.trim() }
-        );
+        const response = await axios.post(`${path}/auth/send_auth_otp`, {
+          email: email.trim().toLowerCase(),
+          username: username.trim(),
+        });
         if (response.data) {
           setLoading(false);
           toast.success("OTP has been sent to your mail successfully.");

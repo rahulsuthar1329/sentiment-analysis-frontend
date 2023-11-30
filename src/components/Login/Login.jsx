@@ -14,6 +14,7 @@ import jwt_decode from "jwt-decode";
 import axios from "axios";
 import { BsFillEyeFill, BsFillEyeSlashFill } from "react-icons/bs";
 import GenieToast from "./../GenieToast/GenieToast";
+import { path } from "../../path";
 
 const Login = () => {
   const [loading, setLoading] = useState(false);
@@ -64,13 +65,10 @@ const Login = () => {
 
     try {
       if (uniqueId.trim() && password.trim()) {
-        const response = await axios.post(
-          "https://sentiment-analysis-backend-three.vercel.app/auth/login",
-          {
-            uniqueId,
-            password,
-          }
-        );
+        const response = await axios.post(`${path}/auth/login`, {
+          uniqueId,
+          password,
+        });
         if (response.status === 200) {
           setLoading(false);
           toast.success("Login Successfully!", toastOptions);

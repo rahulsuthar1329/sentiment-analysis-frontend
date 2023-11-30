@@ -7,6 +7,7 @@ import { toast, ToastContainer } from "react-toastify";
 import axios from "axios";
 import toastOptions from "../../utils/toastOptions";
 import { isEmailValid, isPasswordValid } from "./../../utils/validation";
+import { path } from "../../path";
 
 const ForgotPassword = () => {
   const navigate = useNavigate();
@@ -33,15 +34,15 @@ const ForgotPassword = () => {
       if (password !== cnfpassword)
         return toast.error("Password and Confirm Password doesn't match.");
 
-      const verifyOTP = await axios.post(
-        "https://sentiment-analysis-backend-three.vercel.app/auth/verify_otp",
-        { email: email.trim(), otp }
-      );
+      const verifyOTP = await axios.post(`${path}/auth/verify_otp`, {
+        email: email.trim(),
+        otp,
+      });
 
-      const response = await axios.post(
-        "https://sentiment-analysis-backend-three.vercel.app/auth/update_password",
-        { email, password }
-      );
+      const response = await axios.post(`${path}/auth/update_password`, {
+        email,
+        password,
+      });
 
       if (response.data) {
         toast.success(response.data.message, toastOptions);
@@ -67,12 +68,9 @@ const ForgotPassword = () => {
         return toast.error("Invalid Email!", toastOptions);
 
       // api for getting otp from backend
-      const response = await axios.post(
-        "https://sentiment-analysis-backend-three.vercel.app/auth/send_otp",
-        {
-          email: email.trim(),
-        }
-      );
+      const response = await axios.post(`${path}/auth/send_otp`, {
+        email: email.trim(),
+      });
 
       if (response.data) {
         console.log(response.data);
