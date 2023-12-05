@@ -1,0 +1,96 @@
+.teal {
+    background-color: rgb(82, 153, 128) !important;
+  }
+  .container {
+    display: flex;
+    margin-top: 5rem;
+    justify-content: space-evenly;
+  }
+  
+  .content {
+    text-align: justify;
+  }
+  
+  .getStarted {
+    background-color: #349b7e;
+    border: none;
+    font-size: 13px;
+    outline: 1px solid #349b7e;
+    border-radius: 4px;
+    padding: 8px 20px;
+    color: white;
+    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.5);
+  }
+  .getStarted:active {
+    transform: scale(1.1);
+  }
+  .getStarted:hover {
+    background-color: #2dbe95;
+    outline: 1px solid #2dbe95;
+  }
+  .readMore {
+    font-size: 13px;
+    outline: 1px solid #349b7e;
+    border: none;
+    color: #349b7e;
+    padding: 8px 20px;
+    border-radius: 4px;
+    background-color: white;
+  }
+  .readMore:active {
+    transform: scale(1.1);
+  }
+  .readMore:hover {
+    color: white;
+    background-color: #349b7e;
+    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.5);
+  }
+  
+  @keyframes move {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(10px);
+    }
+  }
+  @keyframes hovermove {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(5px);
+    }
+  }
+  
+  .vector {
+    animation: move 1.5s ease-in-out 0s infinite;
+  }
+  .vector:hover {
+    animation-play-state: paused;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .custom_flex {
+      flex-wrap: wrap-reverse;
+      /* margin-top: rem; */
+      padding: 3rem 0;
+    }
+    .custom_flex h1 {
+      font-size: 25px;
+    }
+    .custom_flex img {
+      width: 100%;
+      animation: hovermove 1.5s ease-in-out 0s infinite;
+    }
+    .custom_flex img:hover {
+      width: 100%;
+      animation-play-state: paused;
+    }
+    .custom_flex p {
+      font-size: 13px;
+    }
+  }
+  
