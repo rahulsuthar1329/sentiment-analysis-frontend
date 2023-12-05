@@ -213,6 +213,71 @@ const Register = () => {
               onChange={handleChange(setDateOfBirth)}
             />
 
+            {/* <div className={` ${styles.radioSection} ${styles.dynamicWidth}`}>
+              <div
+                className={`d-flex justify-content-between align-items-center`}
+              >
+                <label
+                  htmlFor="male"
+                  className="d-flex justify-content-between align-items-center gap-2"
+                  style={{ cursor: "pointer" }}
+                >
+                  <input
+                    type="radio"
+                    onChange={handleChange(setGender)}
+                    value="male"
+                    id="male"
+                    name="userType"
+                    className="d-none"
+                  />
+                  <img
+                    src={gender === "male" ? selectedRadio : unSelectedRadio}
+                    width="18px"
+                  />
+                  <p>Male</p>
+                </label>
+                <label
+                  htmlFor="female"
+                  className="d-flex justify-content-between align-items-center gap-2"
+                  style={{ cursor: "pointer" }}
+                >
+                  <input
+                    type="radio"
+                    onChange={handleChange(setGender)}
+                    value="female"
+                    id="female"
+                    name="userType"
+                    className="d-none"
+                  />
+                  <img
+                    src={gender === "female" ? selectedRadio : unSelectedRadio}
+                    width="18px"
+                  />
+                  <p>Female</p>
+                </label>
+                <label
+                  htmlFor="other"
+                  className="d-flex justify-content-between align-items-center gap-2"
+                  style={{ cursor: "pointer" }}
+                >
+                  <input
+                    type="radio"
+                    onChange={handleChange(setGender)}
+                    value="other"
+                    id="other"
+                    name="userType"
+                    className="d-none"
+                  />
+                  <img
+                    src={gender === "other" ? selectedRadio : unSelectedRadio}
+                    width="18px"
+                  />
+                  <p>Other</p>
+                </label>
+              </div>
+            </div> */}
+
+            {/* gender field */}
             <div className={` ${styles.radioSection} ${styles.dynamicWidth}`}>
               <div
                 className={`d-flex justify-content-between align-items-center`}
@@ -276,6 +341,7 @@ const Register = () => {
                 </label>
               </div>
             </div>
+
             <div className={`${styles.input}`} style={{ position: "relative" }}>
               <input
                 type={passwordVisible ? "text" : "password"}
