@@ -161,3 +161,20 @@
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   row-gap: 10px;
 }
+
+/* Media Query */
+@media (max-width: 480px) {
+  .carousal {
+    width: 100%;
+    height: 30vh;
+  }
+  .sliderContent {
+    width: 80%;
+    left: 20px;
+    font-size: 8px;
+  }
+  .sliderContent button {
+    border-radius: 2px;
+    padding: 5px 10px;
+  }
+}
