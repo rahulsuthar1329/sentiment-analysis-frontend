@@ -74,9 +74,21 @@ const Login = () => {
           toast.success("Login Successfully!", toastOptions);
           const { user, token } = response?.data;
           dispatch(setLogin({ user, token }));
-          setTimeout(() => {
-            navigate("/");
-          }, 1000);
+          const userRole = user?.role; // Assuming 'role' is a property in the user object
+
+          if (userRole === "customer") {
+            setTimeout(() => {
+              navigate("/"); // Navigate to customers page
+            }, 1000);
+          } else if (userRole === "retailer") {
+            setTimeout(() => {
+              navigate("/retailer"); // Navigate to retailers page
+            }, 1000);
+          } else {
+            // Handle invalid or missing user role
+            console.error("Invalid user role:", userRole);
+            // Optionally display an error message to the user
+          }
         }
       } else {
         if (!uniqueId.trim()) {

@@ -28,6 +28,7 @@ const Register = () => {
   const [mobile, setMobile] = useState("");
   const [email, setEmail] = useState("");
   const [gender, setGender] = useState("");
+  const [role , setRole] = useState("");
   const [dateOfBirth, setDateOfBirth] = useState("");
   const [dateType, setDateType] = useState(false);
   const [password, setPassword] = useState("");
@@ -63,6 +64,7 @@ const Register = () => {
         isEmailValid(email) &&
         dateOfBirth &&
         gender &&
+        role &&
         isSelected
       ) {
         formData.append("firstName", firstName);
@@ -70,6 +72,7 @@ const Register = () => {
         formData.append("username", username);
         formData.append("mobile", mobile);
         formData.append("gender", gender);
+        formData.append("role", role);
         formData.append("email", email.toLowerCase());
         formData.append("dateOfBirth", dateOfBirth);
         formData.append("password", password);
@@ -108,6 +111,8 @@ const Register = () => {
           toast.error("Please select your Date of Birth.", toastOptions);
         else if (!gender.trim())
           toast.error("Please select your gender.", toastOptions);
+        else if (!role.trim())
+          toast.error("Please select your role.", toastOptions);
         else if (!password.trim())
           toast.error("Please enter a password.", toastOptions);
         else if (!isPasswordValid(password))
@@ -338,6 +343,70 @@ const Register = () => {
                     width="18px"
                   />
                   <p>Other</p>
+                </label>
+              </div>
+            </div>
+            {/* role field */}
+            <div className={` ${styles.radioSection} ${styles.dynamicWidth}`}>
+              <div
+                className={`d-flex justify-content-between align-items-center`}
+              >
+                <label
+                  htmlFor="customer"
+                  className="d-flex justify-content-between align-items-center gap-2"
+                  style={{ cursor: "pointer" }}
+                >
+                  <input
+                    type="radio"
+                    onChange={handleChange(setRole)}
+                    value="customer"
+                    id="customer"
+                    name="role"
+                    className="d-none"
+                  />
+                  <img
+                    src={role === "customer" ? selectedRadio : unSelectedRadio}
+                    width="18px"
+                  />
+                  <p>Customer</p>
+                </label>
+                <label
+                  htmlFor="retailer"
+                  className="d-flex justify-content-between align-items-center gap-2"
+                  style={{ cursor: "pointer" }}
+                >
+                  <input
+                    type="radio"
+                    onChange={handleChange(setRole)}
+                    value="retailer"
+                    id="retailer"
+                    name="role"
+                    className="d-none"
+                  />
+                  <img
+                    src={role === "retailer" ? selectedRadio : unSelectedRadio}
+                    width="18px"
+                  />
+                  <p>Retailer</p>
+                </label>
+                <label
+                  htmlFor="delivery"
+                  className="d-flex justify-content-between align-items-center gap-2"
+                  style={{ cursor: "pointer" }}
+                >
+                  <input
+                    type="radio"
+                    onChange={handleChange(setRole)}
+                    value="delivery"
+                    id="delivery"
+                    name="role"
+                    className="d-none"
+                  />
+                  <img
+                    src={gender === "other" ? selectedRadio : unSelectedRadio}
+                    width="18px"
+                  />
+                  <p>Delivery</p>
                 </label>
               </div>
             </div>
